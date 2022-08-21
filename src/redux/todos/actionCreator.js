@@ -39,7 +39,7 @@ export const allCompleted = () => {
     type: ALLCOMPLETED,
   };
 };
-export const clearCompleted = (todoText) => {
+export const clearCompleted = () => {
   return {
     type: CLEARCOMPLETED,
   };

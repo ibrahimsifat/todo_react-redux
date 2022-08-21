@@ -6,7 +6,7 @@ import {
   DELETE,
   TOGGLED,
 } from "./actionType";
-import { initialState } from "./initialState";
+import initialState from "./initialState";
 
 const nextTodoId = (todos) => {
   const maxId = todos.reduce((maxId, todo) => Math.max(todo.id, maxId), -1);
@@ -40,7 +40,7 @@ const todoReducer = (state = initialState, action) => {
         }
         return {
           ...todo,
-          color,
+          color: color,
         };
       });
     case DELETE:
@@ -58,7 +58,7 @@ const todoReducer = (state = initialState, action) => {
       return state.filter((todo) => !todo.completed);
 
     default:
-      return;
+      return state;
   }
 };
 export default todoReducer;
